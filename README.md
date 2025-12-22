@@ -1,8 +1,8 @@
 # WujiHand QT 上位机 / WujiHand QT HMI
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey.svg)](https://github.com/Wuji-Technology-Co-Ltd/wujihand-qt)
-[![Version](https://img.shields.io/badge/version-v1.1.0--rc2-orange.svg)](https://github.com/Wuji-Technology-Co-Ltd/wujihand-qt/releases/tag/v1.1.0-rc2)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey.svg)](https://github.com/wuji-technology/wujihand-qt)
+[![Version](https://img.shields.io/badge/version-v1.1.0--rc2-orange.svg)](https://github.com/wuji-technology/wujihand-qt/releases/tag/v1.1.0-rc2)
 
 [中文](#wujihand-qt-上位机) | [English](#english)
 
@@ -135,8 +135,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-- **Project Homepage**: [https://github.com/Wuji-Technology-Co-Ltd/wujihand-qt](https://github.com/Wuji-Technology-Co-Ltd/wujihand-qt)
-- **Issue Tracker**: [https://github.com/Wuji-Technology-Co-Ltd/wujihand-qt/issues](https://github.com/Wuji-Technology-Co-Ltd/wujihand-qt/issues)
+- **Project Homepage**: [https://github.com/wuji-technology/wujihand-qt](https://github.com/wuji-technology/wujihand-qt)
+- **Issue Tracker**: [https://github.com/wuji-technology/wujihand-qt/issues](https://github.com/wuji-technology/wujihand-qt/issues)
 - **Email**: support@wuji.tech
 
 ---
@@ -271,8 +271,8 @@ wujihand-qt-hmi_v1.1.0/
 
 ## 联系方式
 
-- **项目主页**: [https://github.com/Wuji-Technology-Co-Ltd/wujihand-qt](https://github.com/Wuji-Technology-Co-Ltd/wujihand-qt)
-- **问题反馈**: [https://github.com/Wuji-Technology-Co-Ltd/wujihand-qt/issues](https://github.com/Wuji-Technology-Co-Ltd/wujihand-qt/issues)
+- **项目主页**: [https://github.com/wuji-technology/wujihand-qt](https://github.com/wuji-technology/wujihand-qt)
+- **问题反馈**: [https://github.com/wuji-technology/wujihand-qt/issues](https://github.com/wuji-technology/wujihand-qt/issues)
 - **邮箱**: support@wuji.tech
 
 ---
