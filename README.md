@@ -32,7 +32,7 @@ WujiHand QT HMI is a cross-platform graphical user interface application develop
 
 ### Linux
 
-- Ubuntu 20.04/22.04/24.04 + other Linux distributions
+- Ubuntu 22.04/24.04
 - 200MB available disk space
 
 ## Installation Guide
@@ -169,7 +169,7 @@ WujiHand QT HMI 是一个跨平台图形用户界面应用程序，用于控制�
 
 ### Linux
 
-- Ubuntu 20.04/22.04/24.04 + 其他 Linux 发行版
+- Ubuntu 22.04/24.04
 - 200MB 可用磁盘空间
 
 ## 安装指南
