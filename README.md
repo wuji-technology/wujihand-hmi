@@ -27,12 +27,12 @@ Wuji Hand HMI is a cross-platform graphical user interface application developed
 
 ### Windows
 
-- Windows 10/11 (64-bit)
+- Windows 11 (64-bit)
 - 200MB available disk space
 
 ### Linux
 
-- Ubuntu 22.04/24.04
+- Ubuntu 22.04 LTS / Ubuntu 24.04 LTS (x86_64)
 - 200MB available disk space
 
 ## Installation Guide
@@ -164,12 +164,12 @@ Wuji Hand HMI 是一个跨平台图形用户界面应用程序，用于控制和
 
 ### Windows
 
-- Windows 10/11 (64 位)
+- Windows 11 (64 位)
 - 200MB 可用磁盘空间
 
 ### Linux
 
-- Ubuntu 22.04/24.04
+- Ubuntu 22.04 LTS / Ubuntu 24.04 LTS (x86_64)
 - 200MB 可用磁盘空间
 
 ## 安装指南
