@@ -1,4 +1,4 @@
-# WujiHand QT 上位机 / WujiHand QT HMI
+# Wuji Hand HMI / Wuji Hand HMI 上位机
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey.svg)](https://github.com/wuji-technology/wujihand-qt)
@@ -14,7 +14,7 @@ Cross-platform graphical user interface application for Wuji Hand dexterous hand
 
 ## Project Description
 
-WujiHand QT HMI is a cross-platform graphical user interface application developed for controlling and monitoring Wuji Hand dexterous hand devices. This HMI provides an intuitive user interface supporting real-time control, parameter configuration, status monitoring, and more.
+Wuji Hand HMI is a cross-platform graphical user interface application developed for controlling and monitoring Wuji Hand dexterous hand devices. This HMI provides an intuitive user interface supporting real-time control, parameter configuration, status monitoring, and more.
 
 ## Key Features
 
@@ -145,7 +145,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-# WujiHand QT 上位机
+# Wuji Hand HMI 上位机
 
 Wuji Hand 灵巧手控制和监控跨平台图形用户界面应用程序
 
@@ -153,7 +153,7 @@ Wuji Hand 灵巧手控制和监控跨平台图形用户界面应用程序
 
 ## 项目简介
 
-WujiHand QT HMI 是一个跨平台图形用户界面应用程序，用于控制和监控 Wuji Hand 灵巧手设备, 提供了直观的用户界面、状态监控等功能。
+Wuji Hand HMI 是一个跨平台图形用户界面应用程序，用于控制和监控 Wuji Hand 灵巧手设备, 提供了直观的用户界面、状态监控等功能。
 
 ## 主要特性
 
