@@ -1,10 +1,10 @@
-# Wuji Hand HMI / Wuji Hand HMI 上位机
+# Wuji Hand HMI
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey.svg)](https://github.com/wuji-technology/wujihand-qt)
 [![Version](https://img.shields.io/badge/version-v1.1.0--rc2-orange.svg)](https://github.com/wuji-technology/wujihand-qt/releases/tag/v1.1.0-rc2)
 
-[中文](#wujihand-qt-上位机) | [English](#english)
+[中文](#wuji-hand-hmi-1) | [English](#english)
 
 ---
 
@@ -145,11 +145,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-# Wuji Hand HMI 上位机
+# Wuji Hand HMI
 
 Wuji Hand 灵巧手控制和监控跨平台图形用户界面应用程序
 
-[中文](#wujihand-qt-上位机) | [English](#english)
+[中文](#wuji-hand-hmi-1) | [English](#english)
 
 ## 项目简介
 
