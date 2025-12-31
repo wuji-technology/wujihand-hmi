@@ -4,11 +4,11 @@
 [![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey.svg)](https://github.com/wuji-technology/wujihand-qt)
 [![Version](https://img.shields.io/badge/version-v1.1.0--rc2-orange.svg)](https://github.com/wuji-technology/wujihand-qt/releases/tag/v1.1.0-rc2)
 
-[中文](#wuji-hand-hmi-1) | [English](#english)
+[中文](#wuji-hand-hmi-2) | [English](#wuji-hand-hmi-1)
 
 ---
 
-# English
+# Wuji Hand HMI
 
 Cross-platform graphical user interface application for Wuji Hand dexterous hand control and monitoring
 
@@ -149,7 +149,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Wuji Hand 灵巧手控制和监控跨平台图形用户界面应用程序
 
-[中文](#wuji-hand-hmi-1) | [English](#english)
+[中文](#wuji-hand-hmi-2) | [English](#wuji-hand-hmi-1)
 
 ## 项目简介
 
