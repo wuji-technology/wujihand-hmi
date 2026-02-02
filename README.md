@@ -1,133 +1,160 @@
 # wujihand-hmi
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/wuji-technology/wujihand-hmi)](https://github.com/wuji-technology/wujihand-hmi/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/wuji-technology/wujihand-hmi)](https://github.com/wuji-technology/wujihand-hmi/releases)
 
-  Wuji Hand HMI is a cross-platform graphical user interface application for Wuji Hand dexterous hand control and monitoring. It provides real-time device status and sensor data display, built-in calibration and debugging tools, and robust batch operation handling. Supports both Windows and Linux platforms with improved Ubuntu compatibility.
+wujihand-hmi is a comprehensive Python SDK for controlling and communicating with Wuji Hand dexterous robotic hands. It provides stable device communication interfaces, a graphical user interface with real-time data visualization, and ROS bridge support. The SDK features a modular architecture with separate driver, application, and configuration layers for flexible development.
 
-  - **Status Monitoring**: Real-time display of device status and sensor data with optimized log display
-  - **Calibration Functions**: Built-in device calibration and debugging tools
-  - **Batch Operations**: Robust exception handling for batch operations
-  - **Cross-platform**: Support for Windows and Linux platforms with improved Ubuntu compatibility
+## Table of Contents
 
-  ## Table of Contents
+- [Repository Structure](#repository-structure)
+- [Usage](#usage)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running](#running)
+- [Build & Package](#build--package)
+- [Configuration](#configuration)
+- [Testing](#testing)
+- [Contact](#contact)
 
-  - [Usage](#usage)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-    - [Running](#running)
-  - [Troubleshooting](#troubleshooting)
-  - [Appendix](#appendix)
-  - [Contact](#contact)
+## Repository Structure
 
-  ## Usage
+```text
+wujihand-hmi/
+├── src/
+│   ├── wujihand_py/           # Main package source code
+│   │   ├── app/               # GUI application layer
+│   │   ├── driver/            # Device drivers
+│   │   ├── scripts/           # Utility scripts
+│   │   └── config/            # SDK default configuration
+│   └── user_test/             # User test code
+│       ├── scripts/           # Test scripts
+│       └── config/            # User configuration
+├── bin/                       # Binary files
+├── ci_scripts/                # CI/CD scripts
+├── docker_build/              # Docker build files
+├── docs/                      # Documentation
+└── hooks/                     # Git hooks
+```
 
-  ### Prerequisites
+### Directory Description
 
-  **Windows**
-  - Windows 11 (64-bit)
-  - 200MB available disk space
+| Directory | Description |
+|-----------|-------------|
+| `src/` | Main source code directory |
+| `src/wujihand_py/` | Core SDK package with driver and GUI components |
+| `src/user_test/` | User test scripts and configuration |
+| `bin/` | Binary executable files |
+| `ci_scripts/` | Continuous integration scripts |
+| `docker_build/` | Docker build configuration |
+| `docs/` | Project documentation |
+| `hooks/` | Git hook scripts |
 
-  **Linux**
-  - Ubuntu 22.04 LTS / Ubuntu 24.04 LTS (x86_64)
-  - 200MB available disk space
+## Usage
 
-  ### Installation
+### Prerequisites
 
-  **Windows**
+- Python >= 3.10
+- PySide6 (Qt6)
+- Ubuntu 22.04 LTS / Ubuntu 24.04 LTS (x86_64) or Windows 11 (64-bit)
 
-  Download and run the installer:
+### Installation
 
-  ```bash
-  wujihand-qt-hmi_v1.1.0.exe
-  ```
+```bash
+# Clone the repository
+git clone https://github.com/wuji-technology/wujihand-hmi.git
+cd wujihand-hmi
 
-  **Linux**
+# Create and activate virtual environment
+python -m venv .venv
+source .venv/bin/activate  # Linux
+# or .venv\Scripts\activate  # Windows
 
-  Extract and run:
+# Install dependencies
+pip install -r requirements.txt
+```
 
-  ```bash
-  # Extract the package
-  tar -xzvf wujihand-qt-hmi_v1.1.0-linux.tar.gz
+### Running
 
-  # Navigate to the extracted directory
-  cd wujihand-qt-hmi_v1.1.0/
+```bash
+# Activate virtual environment
+source .venv/bin/activate
 
-  # Run the application
-  ./wujihand-qt-hmi_v1.1.0
-  ```
+# Run GUI application (main entry)
+PYTHONPATH=src python src/user_test/scripts/qt_test.py
 
-  ### Running
+# Run standalone GUI (no device required)
+PYTHONPATH=src python src/user_test/scripts/qt_test_standalone.py
 
-  #### 1. Launch Application
+# Run SDO communication test
+PYTHONPATH=src python src/user_test/scripts/sdo_test.py
 
-  ```bash
-  # Windows
-  wujihand-qt-hmi_v1.1.0.exe
+# Run PDO communication test
+PYTHONPATH=src python src/user_test/scripts/pdo_test.py
 
-  # Linux
-  cd wujihand-qt-hmi_v1.1.0/
-  ./wujihand-qt-hmi_v1.1.0
-  ```
+# Check device info
+PYTHONPATH=src python src/user_test/scripts/check_info.py
+```
 
-  #### 2. HMI Usage Tutorial
+## Build & Package
 
-  **Documentation Link**: [Wuji Hand Usage Tutorial](https://docs.wuji.tech/)
+### Build for Ubuntu
 
-  #### Configuration
+```bash
+# Activate virtual environment
+source .venv/bin/activate
 
-  **Communication Configuration**
+# Build with wujihub (recommended)
+./reset_params_install.sh wujihand_qt_hmi_Ubuntu_with_wujihub.spec
 
-  Connect Wuji Hand dexterous hand via USB
+# Build without wujihub
+./reset_params_install.sh wujihand_qt_hmi_Ubuntu.spec
+```
 
-  #### Project Structure
+### Build for Windows
 
-  **Windows Version**
+```bash
+pyinstaller wujihand_qt_hmi_Windows.spec
+```
 
-  ```text
-  wujihand-qt-hmi_v1.1.0/
-  ├── wujihand-qt-hmi_v1.1.0.exe     # Main program
-  ├── bin/                           # wujihub runtime library files
-  ├── config/                        # Configuration files
-  ├── _internal/                     # Internal dependency library files
-  ```
+Build output will be in `dist/` directory:
+- `wujihand-qt-hmi`: Main executable
+- `bin/wujihub`: WujiHub daemon (if using `_with_wujihub.spec`)
+- `config/`: Configuration files
 
-  **Linux Version**
+## Configuration
 
-  ```text
-  wujihand-qt-hmi_v1.1.0/
-  ├── wujihand-qt-hmi_v1.1.0.bin     # Main program
-  ├── bin/                           # wujihub
-  ├── config/                        # Configuration files
-  ```
+### Basic Configuration
 
-  ## Troubleshooting
+Configure basic parameters in `src/wujihand_py/config/user_param.yaml`:
 
-  1. **Application won't start**
+```yaml
+device:
+  local_host: 192.168.128.2
+  remote_host: 192.168.128.1
+```
 
-     Check error logs for detailed information. Keep logs and contact customer support.
+### User Configuration
 
-  2. **Device connection failed**
+Configure user-specific parameters in `src/user_test/config/user_params.yaml`:
 
-     - Check if device is properly connected
-     - Verify port configuration is correct
-     - Check firewall settings
-     - Check permission settings
+```yaml
+device:
+  local_host: 192.168.128.2
+  remote_host: 192.168.128.1
+```
 
-  3. **UI display issues**
+## Testing
 
-     - Update graphics drivers
-     - Check system DPI settings
-     - Try running as administrator
-     - Adjust screen scaling to 100%
+Test scripts are located in `src/user_test/scripts/`:
 
-  ## Appendix
+| Script | Description |
+|--------|-------------|
+| `qt_test.py` | GUI functionality test |
+| `qt_test_standalone.py` | Standalone GUI test (no device) |
+| `pdo_test.py` | PDO communication test |
+| `sdo_test.py` | SDO communication test |
+| `check_info.py` | Device information query |
 
-  - **Project Homepage**: [https://github.com/wuji-technology/wujihand-hmi](https://github.com/wuji-technology/wujihand-hmi)
-  - **Issue Tracker**: [https://github.com/wuji-technology/wujihand-hmi/issues](https://github.com/wuji-technology/wujihand-hmi/issues)
-  - **Documentation**: [Wuji Hand Usage Tutorial](https://docs.wuji.tech/)
+## Contact
 
-  > **Note**: This project is under active development and features may change. Please check for updates regularly.
-
-  ## Contact
-
-  For any questions, please contact [support@wuji.tech](mailto:support@wuji.tech).
+For any questions, please contact support@wuji.tech.
