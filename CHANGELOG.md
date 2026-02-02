@@ -7,13 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Fixed GitHub Actions workflow error: removed invalid `secrets` context reference from `if` condition
+- Fixed Windows build artifact uploading PyInstaller intermediate files (`base_library.zip`) instead of final zip only
+
 ## [1.5.1] - 2026-02-02
 
 ### Fixed
 - Fixed slider jumping issue when SLIPPED error occurs with firmware v1.2.1
-
-### Changed
-- Changed SLIPPED error level from FATAL to WARNING
 
 ## [1.5.0] - 2026-01-19
 
