@@ -1,133 +1,57 @@
 # wujihand-hmi
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/wuji-technology/wujihand-hmi)](https://github.com/wuji-technology/wujihand-hmi/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/wuji-technology/wujihand-hmi)](https://github.com/wuji-technology/wujihand-hmi/releases)
 
-  Wuji Hand HMI is a cross-platform graphical user interface application for Wuji Hand dexterous hand control and monitoring. It provides real-time device status and sensor data display, built-in calibration and debugging tools, and robust batch operation handling. Supports both Windows and Linux platforms with improved Ubuntu compatibility.
+Wuji Hand HMI is a cross-platform graphical user interface application for Wuji Hand dexterous hand. It provides real-time device status monitoring, built-in calibration and debugging tools, and supports both Windows and Ubuntu.
 
-  - **Status Monitoring**: Real-time display of device status and sensor data with optimized log display
-  - **Calibration Functions**: Built-in device calibration and debugging tools
-  - **Batch Operations**: Robust exception handling for batch operations
-  - **Cross-platform**: Support for Windows and Linux platforms with improved Ubuntu compatibility
+**Get started with [Quick Start](#quick-start). For detailed documentation, please refer to [HMI User Guide](https://docs.wuji.tech/docs/en/wuji-hand/latest/wuji-hand-hmi-user-guide/) on Wuji Docs Center.**
 
-  ## Table of Contents
+## Quick Start
 
-  - [Usage](#usage)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-    - [Running](#running)
-  - [Troubleshooting](#troubleshooting)
-  - [Appendix](#appendix)
-  - [Contact](#contact)
+### Installation
 
-  ## Usage
+Download the latest package from [GitHub Releases](https://github.com/wuji-technology/wujihand-hmi/releases/latest).
 
-  ### Prerequisites
+**Windows**
 
-  **Windows**
-  - Windows 11 (64-bit)
-  - 200MB available disk space
+Extract the package, then double-click `wuji-hand-hmi_<version>-windows` to launch.
 
-  **Linux**
-  - Ubuntu 22.04 LTS / Ubuntu 24.04 LTS (x86_64)
-  - 200MB available disk space
+**Ubuntu**
 
-  ### Installation
+```bash
+sudo apt install ./wuji-hand-hmi_<version>_amd64.deb
+```
 
-  **Windows**
+Open from the application menu, or run `wuji-hand-hmi` in the terminal.
 
-  Download and run the installer:
+### Connect and enable
 
-  ```bash
-  wujihand-qt-hmi_v1.1.0.exe
-  ```
+1. Connect Wuji Hand via USB, select the correct port, and click **Connect**.
+2. Click **Enable** to power all joint motors.
+3. Click **Run Demo** to verify communication and motion.
 
-  **Linux**
+## Troubleshooting
 
-  Extract and run:
+1. **Port access permission (Ubuntu)**
 
-  ```bash
-  # Extract the package
-  tar -xzvf wujihand-qt-hmi_v1.1.0-linux.tar.gz
+   If you can't find the port when launching the Ubuntu HMI:
+   - Method 1: Add the current user to the `dialout` group
+     ```bash
+     sudo usermod -a -G dialout $USER
+     ```
+     After execution, apply the permissions:
+     - Current terminal only: `newgrp dialout`
+     - System-wide: `sudo reboot`
 
-  # Navigate to the extracted directory
-  cd wujihand-qt-hmi_v1.1.0/
+   - Method 2: Launch the HMI with sudo
+     ```bash
+     sudo wuji-hand-hmi
+     ```
 
-  # Run the application
-  ./wujihand-qt-hmi_v1.1.0
-  ```
+2. **Display scaling warning**
 
-  ### Running
+   If a display scaling warning appears during startup, adjust the display scaling to 100% (1:1) in your system settings, then restart the HMI.
 
-  #### 1. Launch Application
+## Contact
 
-  ```bash
-  # Windows
-  wujihand-qt-hmi_v1.1.0.exe
-
-  # Linux
-  cd wujihand-qt-hmi_v1.1.0/
-  ./wujihand-qt-hmi_v1.1.0
-  ```
-
-  #### 2. HMI Usage Tutorial
-
-  **Documentation Link**: [Wuji Hand Usage Tutorial](https://docs.wuji.tech/)
-
-  #### Configuration
-
-  **Communication Configuration**
-
-  Connect Wuji Hand dexterous hand via USB
-
-  #### Project Structure
-
-  **Windows Version**
-
-  ```text
-  wujihand-qt-hmi_v1.1.0/
-  ├── wujihand-qt-hmi_v1.1.0.exe     # Main program
-  ├── bin/                           # wujihub runtime library files
-  ├── config/                        # Configuration files
-  ├── _internal/                     # Internal dependency library files
-  ```
-
-  **Linux Version**
-
-  ```text
-  wujihand-qt-hmi_v1.1.0/
-  ├── wujihand-qt-hmi_v1.1.0.bin     # Main program
-  ├── bin/                           # wujihub
-  ├── config/                        # Configuration files
-  ```
-
-  ## Troubleshooting
-
-  1. **Application won't start**
-
-     Check error logs for detailed information. Keep logs and contact customer support.
-
-  2. **Device connection failed**
-
-     - Check if device is properly connected
-     - Verify port configuration is correct
-     - Check firewall settings
-     - Check permission settings
-
-  3. **UI display issues**
-
-     - Update graphics drivers
-     - Check system DPI settings
-     - Try running as administrator
-     - Adjust screen scaling to 100%
-
-  ## Appendix
-
-  - **Project Homepage**: [https://github.com/wuji-technology/wujihand-hmi](https://github.com/wuji-technology/wujihand-hmi)
-  - **Issue Tracker**: [https://github.com/wuji-technology/wujihand-hmi/issues](https://github.com/wuji-technology/wujihand-hmi/issues)
-  - **Documentation**: [Wuji Hand Usage Tutorial](https://docs.wuji.tech/)
-
-  > **Note**: This project is under active development and features may change. Please check for updates regularly.
-
-  ## Contact
-
-  For any questions, please contact [support@wuji.tech](mailto:support@wuji.tech).
+For any questions, please contact [support@wuji.tech](mailto:support@wuji.tech).
