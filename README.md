@@ -1,6 +1,6 @@
 # wujihand-hmi
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/wuji-technology/wujihand-hmi)](https://github.com/wuji-technology/wujihand-hmi/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/wuji-technology/wujihand-hmi?display_name=tag)](https://github.com/wuji-technology/wujihand-hmi/releases)
 
 Wuji Hand HMI is a cross-platform graphical user interface application for Wuji Hand dexterous hand. It provides real-time device status monitoring, built-in calibration and debugging tools, and supports both Windows and Ubuntu.
 
