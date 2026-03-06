@@ -1,160 +1,57 @@
 # wujihand-hmi
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/wuji-technology/wujihand-hmi)](https://github.com/wuji-technology/wujihand-hmi/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![Release](https://img.shields.io/github/v/release/wuji-technology/wujihand-hmi?display_name=tag)](https://github.com/wuji-technology/wujihand-hmi/releases)
 
-wujihand-hmi is a comprehensive Python SDK for controlling and communicating with Wuji Hand dexterous robotic hands. It provides stable device communication interfaces, a graphical user interface with real-time data visualization, and ROS bridge support. The SDK features a modular architecture with separate driver, application, and configuration layers for flexible development.
+Wuji Hand HMI is a cross-platform graphical user interface application for Wuji Hand dexterous hand. It provides real-time device status monitoring, built-in calibration and debugging tools, and supports both Windows and Ubuntu.
 
-## Table of Contents
+**Get started with [Quick Start](#quick-start). For detailed documentation, please refer to [HMI User Guide](https://docs.wuji.tech/docs/en/wuji-hand/latest/wuji-hand-hmi-user-guide/) on Wuji Docs Center.**
 
-- [Repository Structure](#repository-structure)
-- [Usage](#usage)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Running](#running)
-- [Build & Package](#build--package)
-- [Configuration](#configuration)
-- [Testing](#testing)
-- [Contact](#contact)
-
-## Repository Structure
-
-```text
-wujihand-hmi/
-├── src/
-│   ├── wujihand_py/           # Main package source code
-│   │   ├── app/               # GUI application layer
-│   │   ├── driver/            # Device drivers
-│   │   ├── scripts/           # Utility scripts
-│   │   └── config/            # SDK default configuration
-│   └── user_test/             # User test code
-│       ├── scripts/           # Test scripts
-│       └── config/            # User configuration
-├── bin/                       # Binary files
-├── ci_scripts/                # CI/CD scripts
-├── docker_build/              # Docker build files
-├── docs/                      # Documentation
-└── hooks/                     # Git hooks
-```
-
-### Directory Description
-
-| Directory | Description |
-|-----------|-------------|
-| `src/` | Main source code directory |
-| `src/wujihand_py/` | Core SDK package with driver and GUI components |
-| `src/user_test/` | User test scripts and configuration |
-| `bin/` | Binary executable files |
-| `ci_scripts/` | Continuous integration scripts |
-| `docker_build/` | Docker build configuration |
-| `docs/` | Project documentation |
-| `hooks/` | Git hook scripts |
-
-## Usage
-
-### Prerequisites
-
-- Python >= 3.10
-- PySide6 (Qt6)
-- Ubuntu 22.04 LTS / Ubuntu 24.04 LTS (x86_64) or Windows 11 (64-bit)
+## Quick Start
 
 ### Installation
 
-```bash
-# Clone the repository
-git clone https://github.com/wuji-technology/wujihand-hmi.git
-cd wujihand-hmi
+Download the latest package from [GitHub Releases](https://github.com/wuji-technology/wujihand-hmi/releases/latest).
 
-# Create and activate virtual environment
-python -m venv .venv
-source .venv/bin/activate  # Linux
-# or .venv\Scripts\activate  # Windows
+**Windows**
 
-# Install dependencies
-pip install -r requirements.txt
-```
+Extract the package, then double-click `wuji-hand-hmi_<version>-windows` to launch.
 
-### Running
+**Ubuntu**
 
 ```bash
-# Activate virtual environment
-source .venv/bin/activate
-
-# Run GUI application (main entry)
-PYTHONPATH=src python src/user_test/scripts/qt_test.py
-
-# Run standalone GUI (no device required)
-PYTHONPATH=src python src/user_test/scripts/qt_test_standalone.py
-
-# Run SDO communication test
-PYTHONPATH=src python src/user_test/scripts/sdo_test.py
-
-# Run PDO communication test
-PYTHONPATH=src python src/user_test/scripts/pdo_test.py
-
-# Check device info
-PYTHONPATH=src python src/user_test/scripts/check_info.py
+sudo apt install ./wuji-hand-hmi_<version>_amd64.deb
 ```
 
-## Build & Package
+Open from the application menu, or run `wuji-hand-hmi` in the terminal.
 
-### Build for Ubuntu
+### Connect and enable
 
-```bash
-# Activate virtual environment
-source .venv/bin/activate
+1. Connect Wuji Hand via USB, select the correct port, and click **Connect**.
+2. Click **Enable** to power all joint motors.
+3. Click **Run Demo** to verify communication and motion.
 
-# Build with wujihub (recommended)
-./reset_params_install.sh wujihand_qt_hmi_Ubuntu_with_wujihub.spec
+## Troubleshooting
 
-# Build without wujihub
-./reset_params_install.sh wujihand_qt_hmi_Ubuntu.spec
-```
+1. **Port access permission (Ubuntu)**
 
-### Build for Windows
+   If you can't find the port when launching the Ubuntu HMI:
+   - Method 1: Add the current user to the `dialout` group
+     ```bash
+     sudo usermod -a -G dialout $USER
+     ```
+     After execution, apply the permissions:
+     - Current terminal only: `newgrp dialout`
+     - System-wide: `sudo reboot`
 
-```bash
-pyinstaller wujihand_qt_hmi_Windows.spec
-```
+   - Method 2: Launch the HMI with sudo
+     ```bash
+     sudo wuji-hand-hmi
+     ```
 
-Build output will be in `dist/` directory:
-- `wujihand-qt-hmi`: Main executable
-- `bin/wujihub`: WujiHub daemon (if using `_with_wujihub.spec`)
-- `config/`: Configuration files
+2. **Display scaling warning**
 
-## Configuration
-
-### Basic Configuration
-
-Configure basic parameters in `src/wujihand_py/config/user_param.yaml`:
-
-```yaml
-device:
-  local_host: 192.168.128.2
-  remote_host: 192.168.128.1
-```
-
-### User Configuration
-
-Configure user-specific parameters in `src/user_test/config/user_params.yaml`:
-
-```yaml
-device:
-  local_host: 192.168.128.2
-  remote_host: 192.168.128.1
-```
-
-## Testing
-
-Test scripts are located in `src/user_test/scripts/`:
-
-| Script | Description |
-|--------|-------------|
-| `qt_test.py` | GUI functionality test |
-| `qt_test_standalone.py` | Standalone GUI test (no device) |
-| `pdo_test.py` | PDO communication test |
-| `sdo_test.py` | SDO communication test |
-| `check_info.py` | Device information query |
+   If a display scaling warning appears during startup, adjust the display scaling to 100% (1:1) in your system settings, then restart the HMI.
 
 ## Contact
 
-For any questions, please contact support@wuji.tech.
+For any questions, please contact [support@wuji.tech](mailto:support@wuji.tech).
