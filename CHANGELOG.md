@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Added doc mode sanitizer (`WUJIHAND_DOC_MODE` env var) to replace sensitive info (version, SN, IP, URL, date) with placeholders in UI for documentation screenshots
+
 ### Fixed
 - Fixed GitHub Actions workflow error: removed invalid `secrets` context reference from `if` condition
 - Fixed Windows build artifact uploading PyInstaller intermediate files (`base_library.zip`) instead of final zip only
@@ -84,9 +87,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed calibration status UI display issues
 - Fixed factory reset dialog layout
 
-[Unreleased]: https://github.com/wuji-technology/wujihand-sdk/compare/v1.5.1...HEAD
-[1.5.1]: https://github.com/wuji-technology/wujihand-sdk/compare/v1.5.0...v1.5.1
-[1.5.0]: https://github.com/wuji-technology/wujihand-sdk/compare/v1.4.0...v1.5.0
-[1.4.0]: https://github.com/wuji-technology/wujihand-sdk/compare/v1.3.0...v1.4.0
-[1.3.0]: https://github.com/wuji-technology/wujihand-sdk/compare/v1.1.0...v1.3.0
-[1.1.0]: https://github.com/wuji-technology/wujihand-sdk/compare/v1.0.4...v1.1.0
+[Unreleased]: https://github.com/wuji-technology/wujihand-hmi/compare/v1.5.1...HEAD
+[1.5.1]: https://github.com/wuji-technology/wujihand-hmi/compare/v1.5.0...v1.5.1
+[1.5.0]: https://github.com/wuji-technology/wujihand-hmi/compare/v1.4.0...v1.5.0
+[1.4.0]: https://github.com/wuji-technology/wujihand-hmi/compare/v1.3.0...v1.4.0
+[1.3.0]: https://github.com/wuji-technology/wujihand-hmi/compare/v1.1.0...v1.3.0
+[1.1.0]: https://github.com/wuji-technology/wujihand-hmi/compare/v1.0.0...v1.1.0
